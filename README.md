@@ -5,18 +5,18 @@ Este projeto é uma API RESTful construída com Spring Boot para gerenciamento d
 ---
 
 ## 📑 Índice
-1. [Sobre o Projeto](#sobre-o-projeto)
-2. [Tecnologias Utilizadas](#tecnologias-utilizadas)
-3. [Autenticação e Perfis](#autenticação-e-perfis)
-4. [Configuração do Ambiente](#configuração-do-ambiente)
-5. [Como Rodar o Projeto](#como-rodar-o-projeto)
-6. [Testes Automatizados (JUnit)](#testes-automatizados-junit)
-7. [Testes de Carga com Apache JMeter](#testes-de-carga-com-apache-jmeter)
-8. [Monitoramento](#monitoramento)
-9. [Documentação Swagger](#documentação-swagger)
-10. [Evidências do Swagger (User e Admin)](#evidências-do-swagger-user-e-admin)
-11. [Deploy](#deploy)
-12. [Produzido por](#produzido-por)
+1. [Sobre o Projeto](#-api-de-cursos-e-alunos--av2)
+2. [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+3. [Autenticação e Perfis](#-autenticação-e-perfis)
+4. [Configuração do Ambiente](#-configuração-do-ambiente)
+5. [Como Rodar o Projeto](#-como-rodar-o-projeto)
+6. [Testes Automatizados (JUnit)](#-testes-automatizados-junit)
+7. [Testes de Carga com Apache JMeter](#-testes-de-carga-com-apache-jmeter)
+8. [Monitoramento](#-monitoramento)
+9. [Documentação Swagger](#-documentação-swagger)
+10. [Evidências do Swagger (User e Admin)](#-evidências-do-swagger-user-e-admin)
+11. [Deploy](#-deploy)
+12. [Produzido por](#-produzido-por)
 
 ## 🚀 Tecnologias Utilizadas
 
