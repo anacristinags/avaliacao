@@ -4,6 +4,17 @@ Este projeto é uma API RESTful construída com Spring Boot para gerenciamento d
 
 ---
 
+## 📑 Índice
+1. [Sobre o Projeto](#sobre-o-projeto)
+2. [Tecnologias Utilizadas](#tecnologias-utilizadas)
+3. [Autenticação e Perfis](#autenticação-e-perfis)
+4. [Configuração do Ambiente](#configuração-do-ambiente)
+5. [Como Rodar o Projeto](#como-rodar-o-projeto)
+6. [Testes Automatizados](#testes-automatizados-junit)
+7. [Testes de Carga com Apache JMeter](#testes-de-carga-com-apache-jmeter)
+8. [Documentação Swagger](#documentação-swagger)
+9. [Evidências do Swagger](#evidências-do-swagger-user-e-admin)
+
 ## 🚀 Tecnologias Utilizadas
 
 - Java 17
