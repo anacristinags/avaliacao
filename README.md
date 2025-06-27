@@ -21,6 +21,40 @@ Este projeto é uma API RESTful construída com Spring Boot para gerenciamento d
 
 ---
 
+## 🔐 Autenticação e Perfis
+
+### 🔑 Autenticação
+| Método | Rota           | Descrição                |
+| ------ | -------------- | ------------------------ |
+| POST   | /auth/login    | Realiza o login e gera um token JWT     |
+| POST   | /auth/validade | Valida o token JWT |
+
+### 🗄️ Credenciais de Acesso:
+| Usuário | Senha    | Permissões              |
+| ------- | -------- | ----------------------- |
+| `user`  | password | GET, POST (aluno/curso) |
+| `admin` | 123456   | GET, POST, PUT, DELETE  |
+
+### 📘 Cursos
+| Método | Rota         | Permissões  |
+| ------ | ------------ | ----------- |
+| GET    | /cursos      | user, admin |
+| GET (id)    | /cursos/{id}      | user, admin |
+| POST   | /cursos      | user, admin |
+| PUT    | /cursos/{id} | admin       |
+| DELETE | /cursos/{id} | admin       |
+
+### 👥 Alunos
+| Método | Rota         | Permissões  |
+| ------ | ------------ | ----------- |
+| GET    | /alunos      | user, admin |
+| GET  (id)  | /alunos/{id}      | user, admin |
+| POST   | /alunos      | user, admin |
+| PUT    | /alunos/{id} | admin       |
+| DELETE | /alunos/{id} | admin       |
+
+
+
 ## 🔧 Configuração do Ambiente
 ### `application.yml`
 A configuração principal da aplicação encontra-se em `src/main/resources/application.yml`. Ela define:
@@ -158,3 +192,47 @@ A API possui uma suíte robusta de testes de integração com **JUnit 5** e **Mo
 | Token expirado              | Simula um token expirado e valida que ele é rejeitado                      |
 | Token com role inválida     | Gera um token com role inválida e verifica que o acesso é negado           |
 | Claims do token             | Verifica se o JWT contém o `username` e a `role` nos claims                |
+
+
+##  📈 Testes de Carga com Apache JMeter
+Para avaliar o desempenho da API sob múltiplas requisições simultâneas.
+
+Etapas:
+Instale o Apache JMeter
+
+Abra o arquivo `Plano de Teste AV2.jmx` (salvo na pasta `testes_JMeter`)
+
+Com a aplicação rodando, clique em Start
+
+Analise os resultados via **Summary Report** e **View Results Tree**
+![Image](https://github.com/user-attachments/assets/32ac1f6d-f74d-4115-b712-059c0f0e38ed)
+![Image](https://github.com/user-attachments/assets/f38c8c54-d03f-4d4a-a240-24af8096870c)
+
+## 📖 Documentação Swagger
+O projeto possui documentação automática com o Swagger UI, gerada via springdoc-openapi.
+#### Local: `http://localhost:8080/swagger-ui.html`
+#### Render: `https://av2-ana-cristina.onrender.com/swagger-ui/index.html`
+![Image](https://github.com/user-attachments/assets/dcadcb80-107b-4c6d-8d54-fab68713ca87)
+
+## 🧾 Evidências do Swagger (User e Admin)
+Abaixo estão exemplos de prints do **Swagger UI**, demonstrando o comportamento esperado dos principais endpoints quando acessados por usuários com **diferentes níveis de permissão** (`admin` e `user`).
+### 🔐 Loggin como `admin`
+#### POST:
+![Image](https://github.com/user-attachments/assets/424c6f3b-d647-4022-be46-343be8516681)
+#### GET:
+![Image](https://github.com/user-attachments/assets/f5f3976a-fb24-4599-981f-91f0bdef9a84)
+#### PUT:
+![Image](https://github.com/user-attachments/assets/8ab03e5f-8c24-4a4c-aa8d-498a62949987)
+#### DELETE:
+![Image](https://github.com/user-attachments/assets/4a514201-454e-445e-8725-62ea6a2343d1)
+
+### 🔒 Loggin como `user`
+#### POST e GET (**LIBERADO**):
+![Image](https://github.com/user-attachments/assets/045b0d9c-9650-4754-bdcd-71d170b907ca)
+#### PUT (**Sem Autorização**):
+![Image](https://github.com/user-attachments/assets/c852c53b-8a95-4287-8b9b-fff5435aeebe)
+#### DELETE (**Sem Autorização**):
+![Image](https://github.com/user-attachments/assets/0dcce80b-ed84-41c9-806f-d78a32ecb2de)
+
+
+
