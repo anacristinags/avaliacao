@@ -10,10 +10,13 @@ Este projeto é uma API RESTful construída com Spring Boot para gerenciamento d
 3. [Autenticação e Perfis](#autenticação-e-perfis)
 4. [Configuração do Ambiente](#configuração-do-ambiente)
 5. [Como Rodar o Projeto](#como-rodar-o-projeto)
-6. [Testes Automatizados](#testes-automatizados-junit)
+6. [Testes Automatizados (JUnit)](#testes-automatizados-junit)
 7. [Testes de Carga com Apache JMeter](#testes-de-carga-com-apache-jmeter)
-8. [Documentação Swagger](#documentação-swagger)
-9. [Evidências do Swagger](#evidências-do-swagger-user-e-admin)
+8. [Monitoramento](#monitoramento)
+9. [Documentação Swagger](#documentação-swagger)
+10. [Evidências do Swagger (User e Admin)](#evidências-do-swagger-user-e-admin)
+11. [Deploy](#deploy)
+12. [Produzido por](#produzido-por)
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -219,6 +222,14 @@ Analise os resultados via **Summary Report** e **View Results Tree**
 ![Image](https://github.com/user-attachments/assets/32ac1f6d-f74d-4115-b712-059c0f0e38ed)
 ![Image](https://github.com/user-attachments/assets/f38c8c54-d03f-4d4a-a240-24af8096870c)
 
+## 🩺 Monitoramento
+![Image](https://github.com/user-attachments/assets/39731152-f941-4e0c-8823-0df88af24b06)
+* Actuator: `/actuator/health`, `/actuator/metrics`
+
+* Prometheus: `/actuator/prometheus`
+
+* Dashboards de exemplo em `docs/grafana/`
+
 ## 📖 Documentação Swagger
 O projeto possui documentação automática com o Swagger UI, gerada via springdoc-openapi.
 #### Local: `http://localhost:8080/swagger-ui.html`
@@ -245,5 +256,16 @@ Abaixo estão exemplos de prints do **Swagger UI**, demonstrando o comportamento
 #### DELETE (**Sem Autorização**):
 ![Image](https://github.com/user-attachments/assets/0dcce80b-ed84-41c9-806f-d78a32ecb2de)
 
+## 🚀 Deploy
+### Docker
+```bash
+# build
+docker build -t cursos-api .
+# run
+docker run -d -p 8080:8080 cursos-api
+```
+### Render
+A aplicação está disponível em produção gratuitamente no Render. Ao fazer push na branch main, o deploy é acionado automaticamente via Dockerfile.
 
-
+## 👩‍💻 Produzido por
+Este projeto foi desenvolvido por Ana Cristina, para a matéria de **Arquitetura de Aplicações Web**
